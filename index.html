@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members List</title>
+    <meta name="author" content="Doha Hmeid">
+    <meta name="description"
+        content="List of team members that provides the capability of adding team members to the list and searching through them.">
+    <meta name="keywords" content="list, team members, addition, searching">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="list.ico">
+    <!--including font awesome v4 icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Add members to Front-end development team</h1>
+    </header>
+
+    <form class="membersForm" method="GET">
+        <div class="search-container">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="search" id="search" class="search" name="search" aria-label="search for a member"
+                placeholder="Find members..." tabindex="1" onkeypress="searchForm()">
+        </div>
+
+        <fieldset class="checkboxes-container">
+            <legend>Options:</legend>
+            <ul>
+                <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <label for="member1">Carolien Bloeme</label>
+                    <input type="checkbox" id="member1" class="member1" name="member1" value="Carolien Bloeme"
+                        tabindex="2">
+                </li>
+
+                <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <label for="member2">Sun Jun</label>
+                    <input type="checkbox" id="member2" class="member2" name="member2" value="Sun Jun" tabindex="3">
+                </li>
+
+                <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <label for="member3">Song Bao</label>
+                    <input type="checkbox" id="member3" class="member3" name="member3" value="Song Bao" tabindex="4">
+                </li>
+
+                <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <label for="member4">Olivia Arribas</label>
+                    <input type="checkbox" id="member4" class="member4" name="member4" value="Olivia Arribas"
+                        tabindex="5">
+                </li>
+
+                <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <label for="member5">Bonginkosi Mdladlana</label>
+                    <input type="checkbox" id="member5" class="member5" name="member5" value="Bonginkosi Mdladlana"
+                        tabindex="6">
+                </li>
+
+                <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <label for="member6">Arina Belomestnykh</label>
+                    <input type="checkbox" id="member6" class="member6" name="member6" value="Arina Belomestnykh"
+                        tabindex="7">
+                </li>
+
+                <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <label for="member7">Jaqueline Likoki</label>
+                    <input type="checkbox" id="member7" class="member7" name="member7" value="Jaqueline Likoki"
+                        tabindex="8">
+                </li>
+            </ul>
+        </fieldset>
+
+        <div class="buttons-container">
+            <button type="button" class="cancel" tabindex="9" onclick="cancelForm()">Cancel</button>
+            <button type="submit" class="save" tabindex="10" onclick="saveForm()">SAVE</button>
+        </div>
+    </form>
+
+    <script>
+        //change the label+icon color to black when checkbox is selected 
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                const label = document.querySelector(`label[for="${this.id}"]`);
+                if (this.checked) {
+                    label.style.color = 'black';
+                } else {
+                    label.style.color = 'grey'; // Reset to default color when unchecked
+                }
+            });
+        });
+
+        //function to handle search queries 
+        function searchForm() {
+            document.getElementById("search").nodeValue;
+        }
+
+        // Function to handle form cancellation
+        function cancelForm() {
+            document.getElementById("membersForm").reset();
+        }
+
+        // Function to handle form saving
+        function saveForm() {
+        }
+    </script>
+</body>
+
+</html>
