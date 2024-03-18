@@ -21,7 +21,7 @@
         <h1>Add members to Front-end development team</h1>
     </header>
 
-    <form id="membersForm" method="GET">
+    <form class="membersForm" method="GET">
         <div class="search-container">
             <i class="fa fa-search" aria-hidden="true"></i>
             <input type="search" id="search" class="search" name="search" aria-label="search for a member"
@@ -88,7 +88,20 @@
 
     <!-- essential javascript codes to provide form functionality, note:functions are not complete yet -->
     <script>
-    
+
+        //change the label+icon color to black when checkbox is selected 
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                const label = document.querySelector(`label[for="${this.id}"]`);
+                if (this.checked) {
+                    label.style.color = 'black';
+                } else {
+                    label.style.color = 'grey'; // Reset to default color when unchecked
+                }
+            });
+        });
+
         //function to handle search queries 
         function searchForm() {
             document.getElementById("search").nodeValue;
