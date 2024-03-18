@@ -9,3 +9,6 @@ The task represents a list of team members. The program provides the capability 
 - Accessible Forms.
 - RWD (Responsive Web Design).
 - Animations (optional).
+
+
+![image](https://github.com/dohmeid/team-members-list/assets/90987176/064611f1-6bbd-4b45-b631-07594c152c2d)
